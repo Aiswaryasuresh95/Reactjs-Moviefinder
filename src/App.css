@@ -90,9 +90,9 @@ width: 28em;
 
   
   transition: var(--transition);
-/*   
+  
   visibility: hidden;
-  z-index: -10;        */
+  z-index: -10;       
 
 }
 .show-scroll{
