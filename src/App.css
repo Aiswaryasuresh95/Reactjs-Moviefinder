@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+
+.mm{
+  color: #948e99;
+  color: #2e1437;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,h2,h3,h4,p{
+  margin: 0;
+  padding: 0;
+
+}
+h1{
+  color: #999999;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*search area */
+
+.searchcontainer{
+  width: 100%;
+  height:20rem;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.searchformbox{
+  width: 30em;
+  height: 5em;
+  /* position: absolute;
+  top: 50%;
+  left: 35%;
+  margin: -25px 0 0 -25px; */
+  background-color: white;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+}
+.searchform{
+ outline: none;
+border-top: none;
+border-left: none;
+border-right: none;
+width: 28em;
+}
+.icon,.searchform{
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ****Moviecategory ******/
+
+
+.trendingcontainer,.upcomingcontainer,.popularcontainer{
+ display: flex;
+ margin-bottom: 3em;
+ z-index: -1;
+
 }
 
-.App-link {
-  color: #61dafb;
+/* Movie category list */
+.card{
+  height: 20em;
+  width: 13em;
+  margin-left: 2em;
+  background-color:#ff1a1a;
+  border-radius: 3px;
+  box-shadow: 0 5px 20px 0 rgba(116, 110, 110, 0.2);
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image{
+  height: 15em;
+  width: 13em;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  border-radius: 3px;
+  
+}
+
+
+/* movie list */
+
+.movielist-container{
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background: rgba(73, 166, 233, 0.5);
+  
+
+  
+  transition: var(--transition);
+/*   
+  visibility: hidden;
+  z-index: -10;        */
+
+}
+.show-scroll{
+  overflow-y:scroll;
+}
+.hide-scroll{
+  overflow-y: hidden;
+}
+
+.searchresult{
+display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   grid-gap: 1em;
+   grid-auto-rows: minmax(100px, auto);  
+  margin-top: 3em;
+  
+  
+}
+.result-header{
+  color: black;
+  font-size: 2rem;
+  margin-top: 3em;
 }
