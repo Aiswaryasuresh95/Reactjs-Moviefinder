@@ -19,11 +19,13 @@ const HomePage=() =>{
   const [trending,setTrending]=useState([]);
   const [upcoming,setUpcoming]=useState([]);
   const [popular,setPopular]=useState([])
+  const [searchItem, setSearch] = useState('');
+  const [showmovies, setshowmovies] = useState(true)
 
 //  ************Function for getting search value*************//
 
 
-const [searchItem, setSearch] = useState('');
+
     
 
     
@@ -33,7 +35,7 @@ const handleChange =(event)=>{
 
   const handleSubmit=(event)=>{
     event.preventDefault();
-  
+    setshowmovies(false);
     const FetchMovie = async()=>{
     const response=await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchItem}`
                 );
@@ -41,10 +43,16 @@ const handleChange =(event)=>{
     const results=data.results;
     setMovies(results);
     console.log(Movies);
+    
 }
 FetchMovie();
 
+
 };
+
+const backtoHome=()=>{
+  setshowmovies(true);
+}
 
 
 
@@ -110,7 +118,7 @@ FetchMovie();
     
         <SearchArea handleSubmit={handleSubmit} handleChange={handleChange} searchItem={searchItem}/>
         
-         <MovieList Movies={Movies}/>  
+         <MovieList Movies={Movies} showmovies={showmovies} backtoHome={backtoHome}/>  
       
         <MovieCategory upcoming={upcoming} trending={trending} popular={popular}/> 
     

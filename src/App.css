@@ -93,13 +93,12 @@ width: 28em;
   
   visibility: hidden;
   z-index: -10;       
+  
+}
+.showmain{
+  visibility: visible;
+  z-index: 10;       
 
-}
-.show-scroll{
-  overflow-y:scroll;
-}
-.hide-scroll{
-  overflow-y: hidden;
 }
 
 .searchresult{
