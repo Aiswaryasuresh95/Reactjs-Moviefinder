@@ -23,7 +23,7 @@ import {UserContext} from '../UserContext';
              return(
                
                 
-                 <MovieCard key={index} image={movie.poster_path} title={movie.original_title} overview={movie.overview}/>
+                 <MovieCard key={index} {...movie}/>
              )
          })}
          </div>

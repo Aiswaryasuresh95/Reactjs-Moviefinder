@@ -40,6 +40,7 @@ const handleChange =(event)=>{
     const response=await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchItem}`
                 );
     const data=await response.json();
+    console.log(data);
     const results=data.results;
     setMovies(results);
     console.log(Movies);

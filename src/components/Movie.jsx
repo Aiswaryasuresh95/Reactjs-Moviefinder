@@ -1,16 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MovieDetails from './Moviedetails';
+import {BrowserRouter as Router ,Switch,Route} from 'react-router-dom';
 
-const MovieCard=({image,title,overview,key}) =>{
+
+
+const MovieCard=({...items}) =>{
             
     return(
 
-    
-        <div className="card">
-
-           <img src={`https://image.tmdb.org/t/p/w500/${image}`} alt="img" className="image" ></img>
-           <h1>{title}</h1>
-        </div>
+     <div className="card">
+          <Link to={`/movies/${items.id}`}>
+              <div className="imagecard">
+                  <img src={`https://image.tmdb.org/t/p/w500/${items.poster_path}`} alt={items.title} className="image"/>
+              </div>
+                  <h4>{items.title}</h4>
+                  <p>{items.release_date}</p>
+               </Link>
+         </div>
     
     )
 }

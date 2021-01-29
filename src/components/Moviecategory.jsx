@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCategorylist from './MovieCategorylist';
+import MovieCard from './Movie';
 
 
 const MovieCategory = ({upcoming,trending,popular}) =>{
@@ -13,7 +14,7 @@ const MovieCategory = ({upcoming,trending,popular}) =>{
                       return(
                           <div>
                        
-                            <MovieCategorylist key={index} {...trend}/>
+                            <MovieCard key={index} {...trend}/>
                           </div>)})}
                 </div>
            </div>
@@ -24,7 +25,7 @@ const MovieCategory = ({upcoming,trending,popular}) =>{
                        {upcoming.map((upcoming,index)=>{
                             return(
                                <div>
-                                 <MovieCategorylist key={index} {...upcoming} />
+                                 <MovieCard key={index} {...upcoming} />
                                  </div>)})}
                      </div>
                 </div>
@@ -34,7 +35,7 @@ const MovieCategory = ({upcoming,trending,popular}) =>{
                      {popular.map((popular,index)=>{
                          return(
                           <div>
-                            <MovieCategorylist key={index} {...popular} />
+                            <MovieCard key={index} {...popular} />
                        </div>)})}
                  </div>
             </div>
