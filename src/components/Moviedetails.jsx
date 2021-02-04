@@ -7,7 +7,7 @@ const MovieDetails =({match})=>{
 
     const [moviedetails, setdetails] = useState({});
     const [castdetails,setCast]=useState([]);
-    console.log(match.params.id);
+    const [crewdetails,setcrew]=useState([]);
 
     useEffect(() => {
         const FetchMovie = async()=>{
@@ -21,11 +21,9 @@ const MovieDetails =({match})=>{
             const response2= await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}/credits?api_key=${API_KEY}&language=en-US`);
             const data2=await response2.json();
             const cast=data2.cast;
+            const crew=data2.crew;
+            setcrew(crew)
             setCast(cast);
-            console.log(castdetails);
-              
-              
-    
        
         }
         FetchMovie();
@@ -34,14 +32,22 @@ const MovieDetails =({match})=>{
 
     return(
        <div>
-          {moviedetails.title}
-          {moviedetails.tagline}
+           <div className="details-container" >
+                    <div className="movie-container">
+                      {/* <div className="movie-container" style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500/${moviedetails.backdrop_path})`}}> */}
 
-          {castdetails.map((cast)=>{
+                          <h1> {moviedetails.title}</h1>
+                          <h2> {moviedetails.tagline}</h2>
+                          {/* <img src={`https://image.tmdb.org/t/p/w500/${moviedetails.poster_path}`} alt={moviedetails.title}></img> */}
+                     </div>
+            </div>
+            
+            
+          {/* {castdetails.map((cast)=>{
               return(
                   <h1 key={cast.id}>{cast.name}</h1>
               )
-          })}
+          })} */}
        </div>
 
     )

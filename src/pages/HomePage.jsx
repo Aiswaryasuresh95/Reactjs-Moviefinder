@@ -2,6 +2,7 @@ import React ,{useState,useEffect} from 'react';
 import SearchArea from '../components/Searcharea';
 import MovieList from '../components/MovieList';
 import MovieCategory from '../components/Moviecategory';
+import '../styles/Homepage-styles.scss';
 
 
 
@@ -115,7 +116,7 @@ const backtoHome=()=>{
 
   return (
 
-    <section>
+    <section className="homepage">
     
         <SearchArea handleSubmit={handleSubmit} handleChange={handleChange} searchItem={searchItem}/>
         

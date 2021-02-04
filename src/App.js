@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import './App.css';
+import './App.scss';
 import Nav from './components/nav';
 import HomePage from './pages/HomePage';
 import MovieDetails from './components/Moviedetails';
