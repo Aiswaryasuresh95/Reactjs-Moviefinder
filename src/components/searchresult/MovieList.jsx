@@ -1,7 +1,6 @@
 import React ,{useContext, useEffect,useState}from 'react';
-import MovieCard from './Movie';
+import MovieCard from '../Moviecard';
 import {TiDelete} from 'react-icons/ti';
-import {UserContext} from '../UserContext';
 
     
  const MovieList =({Movies,showmovies,backtoHome})=>{

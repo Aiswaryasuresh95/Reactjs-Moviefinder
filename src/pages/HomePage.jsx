@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react';
 import SearchArea from '../components/Searcharea';
-import MovieList from '../components/MovieList';
-import MovieCategory from '../components/Moviecategory';
+import MovieList from '../components/searchresult/MovieList';
+import MovieCategory from '../components/categories/Moviecategory';
 import '../styles/Homepage-styles.scss';
 
 
@@ -56,12 +56,7 @@ const backtoHome=()=>{
   setshowmovies(true);
 }
 
-
-
-
-
-
-  // **********Trending movies**********//
+// **********Trending movies**********//
 
   useEffect(() => {
     const FetchMovie = async()=>{
